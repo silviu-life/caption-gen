@@ -15,6 +15,7 @@ A Python CLI tool that takes a background image and a text script, generates spe
 - `--output`: Output video path (default: `./output.mp4`)
 - `--highlight-color`: Hex color for the active word highlight (default: `#FFD700` gold)
 - `--font-size`: Caption font size in pixels (default: `48`)
+- `--voice`: Voice identifier for the TTS provider (default varies by provider, see TTS Providers section)
 
 **Output:**
 - MP4 video (H.264 + AAC), 1080x1920, with animated captions and generated audio
@@ -39,6 +40,7 @@ Step 2: Generate audio + word timestamps via TTS
 
 Step 3: Group words into caption pages (3-5 words each)
   - New page when: word count hits 5, OR audio gap > 300ms between words
+  - Minimum 2 words per page (a single word merges with the next group)
   - Each page: list of {word, start, end} entries
 
 Step 4: Render caption overlays with Pillow
@@ -64,35 +66,37 @@ Step 5: Composite video with MoviePy
 - **Text transform:** Uppercase
 - **Text effects:** Black outline stroke (2px) + drop shadow (4px, rgba(0,0,0,0.5))
 - **Highlight color:** Gold (#FFD700) by default, configurable via `--highlight-color`
-- **Words per page:** 3-5, breaking at natural pauses
+- **Words per page:** 3-5, breaking at natural pauses. Minimum 2 words per page.
 - **Position:** Centered horizontally, approximately 40% from top of frame. This avoids TikTok's UI overlays (bottom ~270px for username/description/nav, right ~100px for interaction buttons, top ~150px for status bar).
 
 ## TTS Providers
 
-All three providers return word-level timestamps alongside the generated audio, eliminating the need for a separate transcription/alignment step.
+Each provider is implemented as a module in `tts/` with a common interface:
+```python
+def generate(text: str, voice: str | None = None) -> tuple[bytes, list[dict]]:
+    """Returns (audio_bytes, [{"word": str, "start": float, "end": float}, ...])"""
+```
 
 ### ElevenLabs
 - API: `POST /v1/text-to-speech/{voice_id}/with-timestamps`
-- Returns: audio bytes (MP3) + word-level alignment data
+- Returns: audio bytes (MP3) + word-level alignment data with start and end times per word
 - Word timestamps included in `alignment` field of response
+- Default voice: `"Rachel"` (voice_id looked up via API if name given)
 - Requires: `ELEVENLABS_API_KEY` env var
 
 ### OpenAI TTS
-- API: `client.audio.speech.create()` with `response_format="verbose_json"` or word-level timestamp request
-- Returns: audio bytes + word timing data
+- API: `client.audio.speech.create()` generates audio only — **no word-level timestamps are returned**
+- **Fallback strategy:** After generating audio, use `faster-whisper` to transcribe the generated audio and extract word-level timestamps. Since the text is known, alignment is straightforward (the words will match closely). This is the only provider that requires Whisper.
+- Default voice: `"alloy"`
 - Requires: `OPENAI_API_KEY` env var
+- Additional dependency: `faster-whisper` (only installed/used when OpenAI TTS is selected)
 
 ### Google Cloud TTS
-- API: `texttospeech.synthesize_speech()` with `enable_time_pointing` for SSML marks
+- API: `texttospeech.synthesize_speech()` with `enable_time_pointing=["SSML_MARK"]`
 - Uses SSML `<mark>` tags around each word to get timepoints
-- Returns: audio bytes + timepoint data
+- **Note:** Timepoints provide word **start** times only, not end times. End times are derived by setting each word's `end` to the next word's `start`. The last word's `end` is set to the total audio duration.
+- Default voice: `"en-US-Neural2-D"`
 - Requires: `GOOGLE_APPLICATION_CREDENTIALS` env var pointing to service account JSON
-
-Each provider is implemented as a module in `tts/` with a common interface:
-```python
-def generate(text: str, **kwargs) -> tuple[bytes, list[dict]]:
-    """Returns (audio_bytes, [{"word": str, "start": float, "end": float}, ...])"""
-```
 
 ## Project Structure
 
@@ -119,6 +123,7 @@ def generate(text: str, **kwargs) -> tuple[bytes, list[dict]]:
 - `elevenlabs` — ElevenLabs Python SDK (for ElevenLabs TTS)
 - `openai` — OpenAI Python SDK (for OpenAI TTS)
 - `google-cloud-texttospeech` — Google Cloud TTS SDK
+- `faster-whisper` — word-level timestamp extraction (only used with OpenAI TTS provider)
 - `argparse` — CLI argument parsing (stdlib)
 
 ## Error Handling
@@ -131,7 +136,7 @@ def generate(text: str, **kwargs) -> tuple[bytes, list[dict]]:
 
 ## Constraints
 
-- No Whisper dependency — timestamps come from TTS providers
+- Whisper is only used as a fallback for OpenAI TTS (which doesn't provide word-level timestamps natively)
 - Image must be exactly 1080x1920 — no resizing, cropping, or padding
 - Single caption style (word-by-word highlight) — no multi-style support
 - Font is bundled — no system font dependency
