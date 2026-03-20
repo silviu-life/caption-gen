@@ -64,7 +64,8 @@ def test_generate_returns_audio_and_words():
     mock_voice.name = "Rachel"
     mock_client.voices.get_all.return_value.voices = [mock_voice]
 
-    with patch("tts.ElevenLabs", return_value=mock_client):
+    with patch("tts.ElevenLabs", return_value=mock_client), \
+         patch.dict("os.environ", {"ELEVENLABS_API_KEY": "test-key"}):
         audio_bytes, words = generate("Hi yo", voice="Rachel")
 
     assert audio_bytes == b"fake-audio"

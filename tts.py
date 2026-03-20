@@ -58,6 +58,11 @@ def generate(text: str, voice: str = "Rachel") -> tuple[bytes, list[dict]]:
     Returns (audio_bytes, [{"word": str, "start": float, "end": float}, ...])
     """
     api_key = os.environ.get("ELEVENLABS_API_KEY")
+    if not api_key:
+        raise RuntimeError(
+            "ELEVENLABS_API_KEY environment variable is not set. "
+            "Get your API key at https://elevenlabs.io"
+        )
 
     client = ElevenLabs(api_key=api_key)
     voice_id = _get_voice_id(client, voice)
