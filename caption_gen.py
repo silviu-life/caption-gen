@@ -29,3 +29,90 @@ def group_words(
         pages[-1].extend(single)
 
     return pages
+
+
+import argparse
+import os
+import sys
+import tempfile
+
+from PIL import Image
+
+
+def validate_inputs(image_path: str, script_path: str) -> str:
+    if not os.path.isfile(image_path):
+        sys.exit(f"Error: Image file not found: {image_path}")
+
+    img = Image.open(image_path)
+    if img.size != (1080, 1920):
+        sys.exit(
+            f"Error: Image must be exactly 1080x1920, got {img.size[0]}x{img.size[1]}"
+        )
+
+    if not os.path.isfile(script_path):
+        sys.exit(f"Error: Script file not found: {script_path}")
+
+    with open(script_path, "r") as f:
+        text = f.read().strip()
+
+    if not text:
+        sys.exit("Error: Script file is empty")
+
+    if not os.environ.get("ELEVENLABS_API_KEY"):
+        sys.exit(
+            "Error: ELEVENLABS_API_KEY environment variable is not set. "
+            "Get your API key at https://elevenlabs.io"
+        )
+
+    return text
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Generate TikTok-style captioned videos from an image and script"
+    )
+    parser.add_argument("--image", required=True, help="Background image (1080x1920 PNG/JPG)")
+    parser.add_argument("--script", required=True, help="Text file with narration script")
+    parser.add_argument("--output", default="./output.mp4", help="Output video path (default: ./output.mp4)")
+    parser.add_argument("--voice", default="Rachel", help="ElevenLabs voice name (default: Rachel)")
+    parser.add_argument("--highlight-color", default="#FFD700", help="Highlight color hex (default: #FFD700)")
+    parser.add_argument("--font-size", type=int, default=48, help="Caption font size (default: 48)")
+
+    args = parser.parse_args()
+
+    script_text = validate_inputs(args.image, args.script)
+    font_path = os.path.join(os.path.dirname(__file__), "fonts", "Oswald-Bold.ttf")
+
+    from tts import generate
+
+    print("Generating speech audio...")
+    audio_bytes, words = generate(script_text, voice=args.voice)
+    print(f"  Got {len(words)} words with timestamps")
+
+    pages = group_words(words)
+    print(f"  Grouped into {len(pages)} caption pages")
+
+    with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as f:
+        f.write(audio_bytes)
+        audio_path = f.name
+
+    try:
+        from compositor import compose_video
+
+        print("Compositing video...")
+        compose_video(
+            image_path=args.image,
+            audio_path=audio_path,
+            pages=pages,
+            font_path=font_path,
+            output_path=args.output,
+            font_size=args.font_size,
+            highlight_color=args.highlight_color,
+        )
+        print(f"Done! Video saved to: {args.output}")
+    finally:
+        os.unlink(audio_path)
+
+
+if __name__ == "__main__":
+    main()
