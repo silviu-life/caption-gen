@@ -1,8 +1,22 @@
+import argparse
+import os
+import sys
+import tempfile
+
+from PIL import Image
+
+
 def group_words(
     words: list[dict],
     max_per_page: int = 5,
     gap_threshold: float = 0.3,
 ) -> list[list[dict]]:
+    """Group words into caption pages of 3-5 words.
+
+    Breaks at max_per_page words or at audio gaps > gap_threshold seconds.
+    Ensures minimum 2 words per page (single words merge forward;
+    trailing single words merge backward).
+    """
     if not words:
         return []
 
@@ -31,23 +45,19 @@ def group_words(
     return pages
 
 
-import argparse
-import os
-import sys
-import tempfile
-
-from PIL import Image
-
-
 def validate_inputs(image_path: str, script_path: str) -> str:
+    """Validate all inputs and return the script text.
+
+    Calls sys.exit() with a descriptive message on any validation failure.
+    """
     if not os.path.isfile(image_path):
         sys.exit(f"Error: Image file not found: {image_path}")
 
-    img = Image.open(image_path)
-    if img.size != (1080, 1920):
-        sys.exit(
-            f"Error: Image must be exactly 1080x1920, got {img.size[0]}x{img.size[1]}"
-        )
+    with Image.open(image_path) as img:
+        if img.size != (1080, 1920):
+            sys.exit(
+                f"Error: Image must be exactly 1080x1920, got {img.size[0]}x{img.size[1]}"
+            )
 
     if not os.path.isfile(script_path):
         sys.exit(f"Error: Script file not found: {script_path}")
