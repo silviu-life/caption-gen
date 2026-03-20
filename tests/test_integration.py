@@ -37,7 +37,7 @@ def _mock_elevenlabs_response():
     wav_bytes = _make_wav_bytes(duration=2.0)
 
     mock_response = MagicMock()
-    mock_response.audio_base64 = base64.b64encode(wav_bytes).decode()
+    mock_response.audio_base_64 = base64.b64encode(wav_bytes).decode()
     mock_response.alignment = MagicMock()
     mock_response.alignment.characters = chars
     mock_response.alignment.character_start_times_seconds = starts

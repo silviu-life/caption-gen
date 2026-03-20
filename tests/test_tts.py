@@ -50,7 +50,7 @@ def test_empty_input():
 
 def test_generate_returns_audio_and_words():
     mock_response = MagicMock()
-    mock_response.audio_base64 = base64.b64encode(b"fake-audio").decode()
+    mock_response.audio_base_64 = base64.b64encode(b"fake-audio").decode()
     mock_response.alignment = MagicMock()
     mock_response.alignment.characters = ["H", "i", " ", "y", "o"]
     mock_response.alignment.character_start_times_seconds = [0.0, 0.1, 0.2, 0.3, 0.4]

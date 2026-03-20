@@ -42,8 +42,12 @@ def _get_voice_id(client: ElevenLabs, voice_name: str) -> str:
         return voice_name
 
     response = client.voices.get_all()
+    voice_name_lower = voice_name.lower()
     for voice in response.voices:
-        if voice.name.lower() == voice_name.lower():
+        # Match exact name or name prefix before " - " description
+        name_lower = voice.name.lower()
+        name_prefix = name_lower.split(" - ")[0].strip()
+        if name_lower == voice_name_lower or name_prefix == voice_name_lower:
             return voice.voice_id
 
     available = [v.name for v in response.voices]
@@ -74,7 +78,7 @@ def generate(text: str, voice: str = "Rachel") -> tuple[bytes, list[dict]]:
         output_format="mp3_44100_128",
     )
 
-    audio_bytes = base64.b64decode(result.audio_base64)
+    audio_bytes = base64.b64decode(result.audio_base_64)
 
     words = chars_to_words(
         list(result.alignment.characters),
