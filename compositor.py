@@ -19,7 +19,7 @@ def compose_video(
     bg = ImageClip(image_path).with_duration(duration)
 
     # TikTok safe zone: ~40% from top = 768px
-    y_position = int(1920 * 0.4)
+    y_position = int(1920 * 0.55)
 
     caption_clips = []
     for page_idx, page in enumerate(pages):
