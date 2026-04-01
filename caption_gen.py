@@ -109,6 +109,9 @@ def main():
     audio_bytes, words, char_count = generate(script_text, voice=args.voice)
     print(f"  Got {len(words)} words with timestamps")
     print(f"  ElevenLabs cost: {char_count} characters")
+    cost_per_char = float(os.environ.get("ELEVENLABS_COST_PER_CHAR", "0.000198"))
+    cost_usd = char_count * cost_per_char
+    print(f"  Estimated cost: ${cost_usd:.4f}")
 
     pages = group_words(words)
     print(f"  Grouped into {len(pages)} caption pages")
