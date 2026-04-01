@@ -199,12 +199,46 @@ async def cmd_scripts(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 @authorized_only
+async def cmd_peek(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    try:
+        upcoming = get_next_unposted(1)
+        if not upcoming:
+            await update.message.reply_text("🎉 All 93 scripts have been posted!")
+            return
+
+        num, slug = upcoming[0]
+        script_file = SCRIPTS_DIR / f"{slug}.txt"
+        if not script_file.exists():
+            await update.message.reply_text(f"❌ Script file not found: {slug}.txt")
+            return
+
+        text = script_file.read_text().strip()
+        readable = slug[4:].replace("-", " ").title()
+
+        # Telegram message limit is 4096 chars, leave room for formatting
+        if len(text) > 3500:
+            text = text[:3500] + "\n\n[...truncated]"
+
+        msg = (
+            f"👁️ <b>Peeking at #{num:03d}</b>\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n"
+            f"📖 <b>{readable}</b>\n\n"
+            f"<i>{text}</i>"
+        )
+        await update.message.reply_text(msg, parse_mode="HTML")
+    except Exception as e:
+        logger.exception("Error in /peek")
+        await update.message.reply_text(f"Error: {e}")
+
+
+@authorized_only
 async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "🧠 <b>Carl Jung Bot — Commands</b>\n"
         "━━━━━━━━━━━━━━━━━━━━\n\n"
         "📊  /status — How's everything going?\n"
         "📜  /scripts — Peek at what's coming next\n"
+        "👁️  /peek — Read the next script's full text\n"
         "▶️  /resume — Unpause and post now\n"
         "⏸️  /pause — Take a break from posting\n"
         "❓  /help — You're looking at it!\n"
@@ -232,6 +266,7 @@ async def post_init(application: Application):
         BotCommand("resume", "▶️ Unpause and post now"),
         BotCommand("scripts", "📜 Peek at what's coming next"),
         BotCommand("pause", "⏸️ Take a break from posting"),
+        BotCommand("peek", "👁️ Read the next script's full text"),
         BotCommand("help", "❓ Show all commands"),
     ])
     logger.info("Bot commands registered with Telegram.")
@@ -246,6 +281,7 @@ def main():
     app.add_handler(CommandHandler("resume", cmd_resume))
     app.add_handler(CommandHandler("scripts", cmd_scripts))
     app.add_handler(CommandHandler("pause", cmd_pause))
+    app.add_handler(CommandHandler("peek", cmd_peek))
     app.add_handler(CommandHandler("help", cmd_help))
 
     logger.info("Starting Caption-Gen Telegram bot (polling)...")
