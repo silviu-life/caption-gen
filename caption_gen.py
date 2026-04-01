@@ -3,7 +3,10 @@ import os
 import sys
 import tempfile
 
+from dotenv import load_dotenv
 from PIL import Image
+
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 
 def group_words(
@@ -81,14 +84,21 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate TikTok-style captioned videos from an image and script"
     )
-    parser.add_argument("--image", required=True, help="Background image (1080x1920 PNG/JPG)")
+    default_image = os.path.join(os.path.dirname(__file__), "images", "05_emerging_1080x1920.png")
+    parser.add_argument("--image", default=default_image, help="Background image (1080x1920 PNG/JPG)")
     parser.add_argument("--script", required=True, help="Text file with narration script")
-    parser.add_argument("--output", default="./output.mp4", help="Output video path (default: ./output.mp4)")
-    parser.add_argument("--voice", default="Rachel", help="ElevenLabs voice name (default: Rachel)")
+    parser.add_argument("--output", default=None, help="Output video path (default: output/<script-name>.mp4)")
+    parser.add_argument("--voice", default="Theo Silk", help="ElevenLabs voice name (default: Theo Silk)")
     parser.add_argument("--highlight-color", default="#FFD700", help="Highlight color hex (default: #FFD700)")
     parser.add_argument("--font-size", type=int, default=48, help="Caption font size (default: 48)")
 
     args = parser.parse_args()
+
+    if args.output is None:
+        script_name = os.path.splitext(os.path.basename(args.script))[0]
+        output_dir = os.path.join(os.path.dirname(__file__), "output")
+        os.makedirs(output_dir, exist_ok=True)
+        args.output = os.path.join(output_dir, f"{script_name}.mp4")
 
     script_text = validate_inputs(args.image, args.script)
     font_path = os.path.join(os.path.dirname(__file__), "fonts", "Oswald-Bold.ttf")
@@ -96,8 +106,9 @@ def main():
     from tts import generate
 
     print("Generating speech audio...")
-    audio_bytes, words = generate(script_text, voice=args.voice)
+    audio_bytes, words, char_count = generate(script_text, voice=args.voice)
     print(f"  Got {len(words)} words with timestamps")
+    print(f"  ElevenLabs cost: {char_count} characters")
 
     pages = group_words(words)
     print(f"  Grouped into {len(pages)} caption pages")

@@ -56,10 +56,11 @@ def _get_voice_id(client: ElevenLabs, voice_name: str) -> str:
     )
 
 
-def generate(text: str, voice: str = "Rachel") -> tuple[bytes, list[dict]]:
+def generate(text: str, voice: str = "Theo Silk") -> tuple[bytes, list[dict], int]:
     """Generate speech audio and word-level timestamps via ElevenLabs.
 
-    Returns (audio_bytes, [{"word": str, "start": float, "end": float}, ...])
+    Returns (audio_bytes, [{"word": str, "start": float, "end": float}, ...], char_count)
+    where char_count is the number of characters sent to the API (ElevenLabs billing unit).
     """
     api_key = os.environ.get("ELEVENLABS_API_KEY")
     if not api_key:
@@ -86,4 +87,4 @@ def generate(text: str, voice: str = "Rachel") -> tuple[bytes, list[dict]]:
         list(result.alignment.character_end_times_seconds),
     )
 
-    return audio_bytes, words
+    return audio_bytes, words, len(text)
