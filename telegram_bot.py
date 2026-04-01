@@ -232,6 +232,100 @@ async def cmd_peek(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 @authorized_only
+async def cmd_log(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    try:
+        log = load_posting_log()
+        if not log:
+            await update.message.reply_text("📭 No posts yet!")
+            return
+
+        recent = log[-5:]  # last 5 posts
+        lines = ["📋 <b>Recent Posts</b>\n"]
+        for e in reversed(recent):
+            status = "✅" if e.get("status") == "success" else "❌"
+            name = e.get("filename", "?")
+            date = e.get("date_posted", "?")
+            # Show just date + time, not full ISO
+            if "T" in date:
+                date = date.replace("T", " ")[:16]
+            cost = e.get("cost_usd", 0)
+            lines.append(f"{status} <b>{name}</b>\n     {date} · ${cost:.2f}")
+
+        await update.message.reply_text("\n".join(lines), parse_mode="HTML")
+    except Exception as e:
+        logger.exception("Error in /log")
+        await update.message.reply_text(f"Error: {e}")
+
+
+@authorized_only
+async def cmd_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    try:
+        now = london_now()
+        today_wd = now.weekday()
+        tomorrow_wd = (today_wd + 1) % 7
+        current_time = now.strftime("%H:%M")
+
+        lines = [f"🗓️ <b>Posting Schedule</b>\n"]
+
+        # Today
+        today_slots = SCHEDULE.get(today_wd, [])
+        lines.append(f"<b>Today ({DAY_NAMES[today_wd]})</b>")
+        for t in today_slots:
+            marker = "✅" if t <= current_time else "⏳"
+            lines.append(f"  {marker} {t}")
+
+        lines.append("")
+
+        # Tomorrow
+        tomorrow_slots = SCHEDULE.get(tomorrow_wd, [])
+        lines.append(f"<b>Tomorrow ({DAY_NAMES[tomorrow_wd]})</b>")
+        for t in tomorrow_slots:
+            lines.append(f"  🔜 {t}")
+
+        await update.message.reply_text("\n".join(lines), parse_mode="HTML")
+    except Exception as e:
+        logger.exception("Error in /schedule")
+        await update.message.reply_text(f"Error: {e}")
+
+
+@authorized_only
+async def cmd_cost(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    try:
+        log = load_posting_log()
+        posted = len(log)
+        remaining = TOTAL_SCRIPTS - posted
+        total_cost = get_cumulative_cost()
+
+        if posted == 0:
+            await update.message.reply_text("📭 No posts yet — can't estimate costs!")
+            return
+
+        avg_cost = total_cost / posted
+        projected_total = avg_cost * TOTAL_SCRIPTS
+        projected_remaining = avg_cost * remaining
+        days_left = remaining / 3  # 3 posts per day
+        daily_cost = avg_cost * 3
+
+        msg = (
+            f"💰 <b>Cost Breakdown</b>\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"📊 <b>So far</b>\n"
+            f"  Spent: <b>${total_cost:.2f}</b> on {posted} posts\n"
+            f"  Avg per post: ${avg_cost:.4f}\n\n"
+            f"🔮 <b>Projected</b>\n"
+            f"  Remaining {remaining} posts: ~${projected_remaining:.2f}\n"
+            f"  Full 93 total: ~${projected_total:.2f}\n\n"
+            f"📅 <b>Daily</b>\n"
+            f"  ~${daily_cost:.2f}/day (3 posts)\n"
+            f"  ~{days_left:.0f} days of content left"
+        )
+        await update.message.reply_text(msg, parse_mode="HTML")
+    except Exception as e:
+        logger.exception("Error in /cost")
+        await update.message.reply_text(f"Error: {e}")
+
+
+@authorized_only
 async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "🧠 <b>Carl Jung Bot — Commands</b>\n"
@@ -239,6 +333,9 @@ async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "📊  /status — How's everything going?\n"
         "📜  /scripts — Peek at what's coming next\n"
         "👁️  /peek — Read the next script's full text\n"
+        "🗓️  /schedule — Today &amp; tomorrow's post times\n"
+        "📋  /log — Recent posting history\n"
+        "💰  /cost — Spend breakdown &amp; projections\n"
         "▶️  /resume — Unpause and post now\n"
         "⏸️  /pause — Take a break from posting\n"
         "❓  /help — You're looking at it!\n"
@@ -263,10 +360,13 @@ async def post_init(application: Application):
     """Register command menu so commands appear in Telegram UI."""
     await application.bot.set_my_commands([
         BotCommand("status", "📊 How's everything going?"),
-        BotCommand("resume", "▶️ Unpause and post now"),
         BotCommand("scripts", "📜 Peek at what's coming next"),
-        BotCommand("pause", "⏸️ Take a break from posting"),
         BotCommand("peek", "👁️ Read the next script's full text"),
+        BotCommand("schedule", "🗓️ Today & tomorrow's post times"),
+        BotCommand("log", "📋 Recent posting history"),
+        BotCommand("cost", "💰 Spend breakdown & projections"),
+        BotCommand("resume", "▶️ Unpause and post now"),
+        BotCommand("pause", "⏸️ Take a break from posting"),
         BotCommand("help", "❓ Show all commands"),
     ])
     logger.info("Bot commands registered with Telegram.")
@@ -282,6 +382,9 @@ def main():
     app.add_handler(CommandHandler("scripts", cmd_scripts))
     app.add_handler(CommandHandler("pause", cmd_pause))
     app.add_handler(CommandHandler("peek", cmd_peek))
+    app.add_handler(CommandHandler("log", cmd_log))
+    app.add_handler(CommandHandler("schedule", cmd_schedule))
+    app.add_handler(CommandHandler("cost", cmd_cost))
     app.add_handler(CommandHandler("help", cmd_help))
 
     logger.info("Starting Caption-Gen Telegram bot (polling)...")
