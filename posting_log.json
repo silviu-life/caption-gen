@@ -45,5 +45,13 @@
     "status": "success",
     "characters_used": 574,
     "cost_usd": 0.1137
+  },
+  {
+    "script_number": 7,
+    "filename": "007-when-fixing-yourself-is-the-problem",
+    "date_posted": "2026-04-02T18:50:00",
+    "status": "success",
+    "characters_used": 777,
+    "cost_usd": 0.1538
   }
 ]
