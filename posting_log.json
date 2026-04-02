@@ -37,5 +37,13 @@
     "status": "success",
     "characters_used": 1227,
     "cost_usd": 0.2429
+  },
+  {
+    "script_number": 6,
+    "filename": "006-the-person-you-pretend-to-be",
+    "date_posted": "2026-04-02T08:53:00",
+    "status": "success",
+    "characters_used": 574,
+    "cost_usd": 0.1137
   }
 ]
