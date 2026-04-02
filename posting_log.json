@@ -29,5 +29,13 @@
     "status": "success",
     "characters_used": 983,
     "cost_usd": 0.1946
+  },
+  {
+    "script_number": 5,
+    "filename": "005-becoming-who-you-are",
+    "date_posted": "2026-04-02T08:08:45",
+    "status": "success",
+    "characters_used": 1227,
+    "cost_usd": 0.2429
   }
 ]
