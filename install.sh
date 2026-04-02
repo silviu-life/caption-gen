@@ -3,6 +3,11 @@ set -euo pipefail
 
 # ── Auto-detect project directory ──
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# ── Activate venv if present ──
+if [[ -f "$PROJECT_DIR/venv/bin/activate" ]]; then
+    source "$PROJECT_DIR/venv/bin/activate"
+fi
 SERVICE_NAME="caption-gen-bot"
 SERVICE_DIR="$HOME/.config/systemd/user"
 SERVICE_FILE="$SERVICE_DIR/$SERVICE_NAME.service"
@@ -117,7 +122,8 @@ install_cron() {
 
     # Build cron block
     local CRON_BLOCK
-    CRON_BLOCK="TZ=Europe/London  $CRON_MARKER
+    CRON_BLOCK="$CRON_MARKER
+TZ=Europe/London
 50 6 * * 1  $auto_post >> $log 2>&1  $CRON_MARKER
 50 16 * * 1 $auto_post >> $log 2>&1  $CRON_MARKER
 50 18 * * 1 $auto_post >> $log 2>&1  $CRON_MARKER
