@@ -61,5 +61,13 @@
     "status": "success",
     "characters_used": 569,
     "cost_usd": 0.1127
+  },
+  {
+    "script_number": 9,
+    "filename": "009-what-you-hate-reveals-you",
+    "date_posted": "2026-04-03T14:50:00",
+    "status": "success",
+    "characters_used": 836,
+    "cost_usd": 0.1655
   }
 ]
