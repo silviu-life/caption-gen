@@ -53,5 +53,13 @@
     "status": "success",
     "characters_used": 777,
     "cost_usd": 0.1538
+  },
+  {
+    "script_number": 8,
+    "filename": "008-the-strength-in-softness",
+    "date_posted": "2026-04-03T06:54:00",
+    "status": "success",
+    "characters_used": 569,
+    "cost_usd": 0.1127
   }
 ]
