@@ -69,5 +69,13 @@
     "status": "success",
     "characters_used": 836,
     "cost_usd": 0.1655
+  },
+  {
+    "script_number": 10,
+    "filename": "010-the-tighter-you-grip",
+    "date_posted": "2026-04-03T16:50:00",
+    "status": "success",
+    "characters_used": 594,
+    "cost_usd": 0.1176
   }
 ]
