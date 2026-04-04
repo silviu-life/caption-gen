@@ -77,5 +77,13 @@
     "status": "success",
     "characters_used": 594,
     "cost_usd": 0.1176
+  },
+  {
+    "script_number": 11,
+    "filename": "011-the-mirror-in-your-enemy",
+    "date_posted": "2026-04-04T11:54:46",
+    "status": "success",
+    "characters_used": 852,
+    "cost_usd": 0.1687
   }
 ]
