@@ -93,5 +93,13 @@
     "status": "success",
     "characters_used": 996,
     "cost_usd": 0.1972
+  },
+  {
+    "script_number": 13,
+    "filename": "013-the-wound-that-runs-your-life",
+    "date_posted": "2026-04-04T18:50:00",
+    "status": "success",
+    "characters_used": 1215,
+    "cost_usd": 0.2406
   }
 ]
