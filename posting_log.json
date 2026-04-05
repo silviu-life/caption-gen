@@ -117,5 +117,13 @@
     "status": "success",
     "characters_used": 853,
     "cost_usd": 0.1689
+  },
+  {
+    "script_number": 16,
+    "filename": "016-the-child-who-learned-to-perform",
+    "date_posted": "2026-04-05T18:56:00",
+    "status": "success",
+    "characters_used": 984,
+    "cost_usd": 0.1948
   }
 ]
