@@ -109,5 +109,13 @@
     "status": "success",
     "characters_used": 824,
     "cost_usd": 0.1632
+  },
+  {
+    "script_number": 15,
+    "filename": "015-why-love-feels-like-danger",
+    "date_posted": "2026-04-05T10:54:00",
+    "status": "success",
+    "characters_used": 853,
+    "cost_usd": 0.1689
   }
 ]
