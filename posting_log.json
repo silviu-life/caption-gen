@@ -157,5 +157,13 @@
     "status": "success",
     "characters_used": 756,
     "cost_usd": 0.1497
+  },
+  {
+    "script_number": 21,
+    "filename": "021-the-war-inside-you",
+    "date_posted": "2026-04-07T16:54:00",
+    "status": "success",
+    "characters_used": 789,
+    "cost_usd": 0.1562
   }
 ]
