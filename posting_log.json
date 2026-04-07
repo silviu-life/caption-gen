@@ -165,5 +165,13 @@
     "status": "success",
     "characters_used": 789,
     "cost_usd": 0.1562
+  },
+  {
+    "script_number": 22,
+    "filename": "022-the-pattern-you-keep-repeating",
+    "date_posted": "2026-04-07T19:55:00",
+    "status": "success",
+    "characters_used": 919,
+    "cost_usd": 0.1820
   }
 ]
