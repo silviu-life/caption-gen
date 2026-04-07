@@ -149,5 +149,13 @@
     "status": "success",
     "characters_used": 843,
     "cost_usd": 0.1669
+  },
+  {
+    "script_number": 20,
+    "filename": "020-the-face-you-show-the-world",
+    "date_posted": "2026-04-07T06:54:14",
+    "status": "success",
+    "characters_used": 756,
+    "cost_usd": 0.1497
   }
 ]
