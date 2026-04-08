@@ -189,5 +189,13 @@
     "status": "success",
     "characters_used": 814,
     "cost_usd": 0.1612
+  },
+  {
+    "script_number": 25,
+    "filename": "025-the-version-you-buried",
+    "date_posted": "2026-04-08T17:54:42",
+    "status": "success",
+    "characters_used": 794,
+    "cost_usd": 0.1572
   }
 ]
