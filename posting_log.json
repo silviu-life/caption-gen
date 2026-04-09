@@ -197,5 +197,13 @@
     "status": "success",
     "characters_used": 794,
     "cost_usd": 0.1572
+  },
+  {
+    "script_number": 26,
+    "filename": "026-the-power-of-not-knowing",
+    "date_posted": "2026-04-09T09:54:14",
+    "status": "success",
+    "characters_used": 589,
+    "cost_usd": 0.1166
   }
 ]
