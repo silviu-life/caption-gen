@@ -205,5 +205,13 @@
     "status": "success",
     "characters_used": 589,
     "cost_usd": 0.1166
+  },
+  {
+    "script_number": 27,
+    "filename": "027-projection-in-love",
+    "date_posted": "2026-04-09T16:56:16",
+    "status": "success",
+    "characters_used": 1077,
+    "cost_usd": 0.2132
   }
 ]
