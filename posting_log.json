@@ -213,5 +213,13 @@
     "status": "success",
     "characters_used": 1077,
     "cost_usd": 0.2132
+  },
+  {
+    "script_number": 28,
+    "filename": "028-the-script-no-one-handed-you",
+    "date_posted": "2026-04-09T19:54:30",
+    "status": "success",
+    "characters_used": 904,
+    "cost_usd": 0.179
   }
 ]
