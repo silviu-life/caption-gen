@@ -237,5 +237,13 @@
     "status": "success",
     "characters_used": 922,
     "cost_usd": 0.1826
+  },
+  {
+    "script_number": 31,
+    "filename": "031-the-wound-that-runs-your-life-pt2",
+    "date_posted": "2026-04-10T20:13:00",
+    "status": "success",
+    "characters_used": 0,
+    "cost_usd": 0
   }
 ]
