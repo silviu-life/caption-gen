@@ -229,5 +229,13 @@
     "status": "success",
     "characters_used": 797,
     "cost_usd": 0.1578
+  },
+  {
+    "script_number": 30,
+    "filename": "030-the-unlived-life",
+    "date_posted": "2026-04-10T13:55:21",
+    "status": "success",
+    "characters_used": 922,
+    "cost_usd": 0.1826
   }
 ]
