@@ -253,5 +253,13 @@
     "status": "success",
     "characters_used": 843,
     "cost_usd": 0.1669
+  },
+  {
+    "script_number": 33,
+    "filename": "033-your-body-remembers",
+    "date_posted": "2026-04-11T15:56:21",
+    "status": "success",
+    "characters_used": 976,
+    "cost_usd": 0.1932
   }
 ]
