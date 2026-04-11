@@ -245,5 +245,13 @@
     "status": "success",
     "characters_used": 0,
     "cost_usd": 0
+  },
+  {
+    "script_number": 32,
+    "filename": "032-the-one-you-keep-choosing",
+    "date_posted": "2026-04-11T11:55:23",
+    "status": "success",
+    "characters_used": 843,
+    "cost_usd": 0.1669
   }
 ]
