@@ -261,5 +261,13 @@
     "status": "success",
     "characters_used": 976,
     "cost_usd": 0.1932
+  },
+  {
+    "script_number": 34,
+    "filename": "034-the-shadow-knows-pt2",
+    "date_posted": "2026-04-11T19:58:36",
+    "status": "success",
+    "characters_used": 1220,
+    "cost_usd": 0.2416
   }
 ]
