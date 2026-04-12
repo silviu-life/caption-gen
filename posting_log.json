@@ -285,5 +285,13 @@
     "status": "success",
     "characters_used": 749,
     "cost_usd": 0.1483
+  },
+  {
+    "script_number": 37,
+    "filename": "037-the-ancestors-in-your-bones",
+    "date_posted": "2026-04-12T19:56:06",
+    "status": "success",
+    "characters_used": 850,
+    "cost_usd": 0.1683
   }
 ]
