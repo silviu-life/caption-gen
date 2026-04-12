@@ -269,5 +269,13 @@
     "status": "success",
     "characters_used": 1220,
     "cost_usd": 0.2416
+  },
+  {
+    "script_number": 35,
+    "filename": "035-the-opposite-you-become",
+    "date_posted": "2026-04-12T09:55:46",
+    "status": "success",
+    "characters_used": 811,
+    "cost_usd": 0.1606
   }
 ]
