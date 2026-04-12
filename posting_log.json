@@ -277,5 +277,13 @@
     "status": "success",
     "characters_used": 811,
     "cost_usd": 0.1606
+  },
+  {
+    "script_number": 36,
+    "filename": "036-earning-love",
+    "date_posted": "2026-04-12T11:54:31",
+    "status": "success",
+    "characters_used": 749,
+    "cost_usd": 0.1483
   }
 ]
