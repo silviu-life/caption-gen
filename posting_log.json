@@ -301,5 +301,13 @@
     "status": "success",
     "characters_used": 715,
     "cost_usd": 0.1416
+  },
+  {
+    "script_number": 39,
+    "filename": "039-when-you-stop-performing",
+    "date_posted": "2026-04-13T16:55:35",
+    "status": "success",
+    "characters_used": 831,
+    "cost_usd": 0.1645
   }
 ]
