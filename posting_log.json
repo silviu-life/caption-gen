@@ -309,5 +309,13 @@
     "status": "success",
     "characters_used": 831,
     "cost_usd": 0.1645
+  },
+  {
+    "script_number": 40,
+    "filename": "040-the-gentle-revolution",
+    "date_posted": "2026-04-13T18:55:00",
+    "status": "success",
+    "characters_used": 864,
+    "cost_usd": 0.1711
   }
 ]
