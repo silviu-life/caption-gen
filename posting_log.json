@@ -293,5 +293,13 @@
     "status": "success",
     "characters_used": 850,
     "cost_usd": 0.1683
+  },
+  {
+    "script_number": 38,
+    "filename": "038-the-door-you-refuse-to-open",
+    "date_posted": "2026-04-13T07:54:38",
+    "status": "success",
+    "characters_used": 715,
+    "cost_usd": 0.1416
   }
 ]
