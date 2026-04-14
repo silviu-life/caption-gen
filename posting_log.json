@@ -317,5 +317,13 @@
     "status": "success",
     "characters_used": 864,
     "cost_usd": 0.1711
+  },
+  {
+    "script_number": 41,
+    "filename": "041-the-mother-wound-you-carry",
+    "date_posted": "2026-04-14T07:55:39",
+    "status": "success",
+    "characters_used": 1004,
+    "cost_usd": 0.1988
   }
 ]
