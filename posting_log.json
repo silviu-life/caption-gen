@@ -333,5 +333,13 @@
     "status": "success",
     "characters_used": 886,
     "cost_usd": 0.1754
+  },
+  {
+    "script_number": 43,
+    "filename": "043-the-child-behind-the-anger",
+    "date_posted": "2026-04-14T19:53:49",
+    "status": "success",
+    "characters_used": 537,
+    "cost_usd": 0.1063
   }
 ]
