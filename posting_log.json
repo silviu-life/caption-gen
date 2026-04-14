@@ -325,5 +325,13 @@
     "status": "success",
     "characters_used": 1004,
     "cost_usd": 0.1988
+  },
+  {
+    "script_number": 42,
+    "filename": "042-falling-in-love-with-a-projection",
+    "date_posted": "2026-04-14T17:55:34",
+    "status": "success",
+    "characters_used": 886,
+    "cost_usd": 0.1754
   }
 ]
