@@ -341,5 +341,13 @@
     "status": "success",
     "characters_used": 537,
     "cost_usd": 0.1063
+  },
+  {
+    "script_number": 44,
+    "filename": "044-you-are-not-your-persona",
+    "date_posted": "2026-04-15T06:54:46",
+    "status": "success",
+    "characters_used": 755,
+    "cost_usd": 0.1495
   }
 ]
