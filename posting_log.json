@@ -349,5 +349,13 @@
     "status": "success",
     "characters_used": 755,
     "cost_usd": 0.1495
+  },
+  {
+    "script_number": 45,
+    "filename": "045-the-purpose-of-suffering",
+    "date_posted": "2026-04-15T18:14:29",
+    "status": "success",
+    "characters_used": 1204,
+    "cost_usd": 0.2384
   }
 ]
