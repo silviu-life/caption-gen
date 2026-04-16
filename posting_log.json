@@ -365,5 +365,13 @@
     "status": "success",
     "characters_used": 818,
     "cost_usd": 0.1620
+  },
+  {
+    "script_number": 47,
+    "filename": "047-what-you-refuse-to-feel",
+    "date_posted": "2026-04-16T17:53:14",
+    "status": "success",
+    "characters_used": 604,
+    "cost_usd": 0.1196
   }
 ]
