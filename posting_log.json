@@ -373,5 +373,13 @@
     "status": "success",
     "characters_used": 604,
     "cost_usd": 0.1196
+  },
+  {
+    "script_number": 48,
+    "filename": "048-the-prison-of-being-good",
+    "date_posted": "2026-04-16T19:50:00",
+    "status": "success",
+    "characters_used": 809,
+    "cost_usd": 0.1602
   }
 ]
