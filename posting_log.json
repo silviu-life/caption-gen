@@ -357,5 +357,13 @@
     "status": "success",
     "characters_used": 1204,
     "cost_usd": 0.2384
+  },
+  {
+    "script_number": 46,
+    "filename": "046-the-shadow-in-your-kindness",
+    "date_posted": "2026-04-16T06:54:00",
+    "status": "success",
+    "characters_used": 818,
+    "cost_usd": 0.1620
   }
 ]
