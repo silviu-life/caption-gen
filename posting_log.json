@@ -389,5 +389,13 @@
     "status": "success",
     "characters_used": 807,
     "cost_usd": 0.1598
+  },
+  {
+    "script_number": 50,
+    "filename": "050-the-stranger-in-the-mirror",
+    "date_posted": "2026-04-17T12:55:29",
+    "status": "success",
+    "characters_used": 1089,
+    "cost_usd": 0.2156
   }
 ]
