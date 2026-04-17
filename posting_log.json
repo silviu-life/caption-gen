@@ -381,5 +381,13 @@
     "status": "success",
     "characters_used": 809,
     "cost_usd": 0.1602
+  },
+  {
+    "script_number": 49,
+    "filename": "049-repair-not-perfection",
+    "date_posted": "2026-04-17T08:55:00",
+    "status": "success",
+    "characters_used": 807,
+    "cost_usd": 0.1598
   }
 ]
