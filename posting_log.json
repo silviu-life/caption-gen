@@ -397,5 +397,13 @@
     "status": "success",
     "characters_used": 1089,
     "cost_usd": 0.2156
+  },
+  {
+    "script_number": 51,
+    "filename": "051-why-you-leave-when-it-gets-real",
+    "date_posted": "2026-04-17T18:54:37",
+    "status": "success",
+    "characters_used": 844,
+    "cost_usd": 0.1671
   }
 ]
