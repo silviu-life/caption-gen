@@ -421,5 +421,13 @@
     "status": "success",
     "characters_used": 1002,
     "cost_usd": 0.1984
+  },
+  {
+    "script_number": 54,
+    "filename": "054-the-coincidence-that-wasnt",
+    "date_posted": "2026-04-18T18:50:00",
+    "status": "success",
+    "characters_used": 787,
+    "cost_usd": 0.1558
   }
 ]
