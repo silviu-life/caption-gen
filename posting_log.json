@@ -445,5 +445,13 @@
     "status": "success",
     "characters_used": 833,
     "cost_usd": 0.1649
+  },
+  {
+    "script_number": 57,
+    "filename": "057-the-role-that-ate-you-alive",
+    "date_posted": "2026-04-19T19:55:25",
+    "status": "success",
+    "characters_used": 1137,
+    "cost_usd": 0.2251
   }
 ]
