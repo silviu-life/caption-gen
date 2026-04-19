@@ -364,7 +364,7 @@
     "date_posted": "2026-04-16T06:54:00",
     "status": "success",
     "characters_used": 818,
-    "cost_usd": 0.1620
+    "cost_usd": 0.162
   },
   {
     "script_number": 47,
@@ -437,5 +437,13 @@
     "status": "success",
     "characters_used": 552,
     "cost_usd": 0.1093
+  },
+  {
+    "script_number": 56,
+    "filename": "056-the-thing-you-admire-is-yours",
+    "date_posted": "2026-04-19T11:53:45",
+    "status": "success",
+    "characters_used": 833,
+    "cost_usd": 0.1649
   }
 ]
