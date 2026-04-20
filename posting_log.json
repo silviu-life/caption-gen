@@ -453,5 +453,13 @@
     "status": "success",
     "characters_used": 1137,
     "cost_usd": 0.2251
+  },
+  {
+    "script_number": 58,
+    "filename": "058-the-night-sea-journey",
+    "date_posted": "2026-04-20T06:56:09",
+    "status": "success",
+    "characters_used": 1210,
+    "cost_usd": 0.2396
   }
 ]
