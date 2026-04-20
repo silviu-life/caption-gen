@@ -461,5 +461,13 @@
     "status": "success",
     "characters_used": 1210,
     "cost_usd": 0.2396
+  },
+  {
+    "script_number": 59,
+    "filename": "059-stop-trying-to-be-healed",
+    "date_posted": "2026-04-20T16:53:38",
+    "status": "success",
+    "characters_used": 560,
+    "cost_usd": 0.1109
   }
 ]
