@@ -469,5 +469,13 @@
     "status": "success",
     "characters_used": 560,
     "cost_usd": 0.1109
+  },
+  {
+    "script_number": 60,
+    "filename": "060-the-voice-that-isnt-yours",
+    "date_posted": "2026-04-20T18:54:57",
+    "status": "success",
+    "characters_used": 931,
+    "cost_usd": 0.1843
   }
 ]
