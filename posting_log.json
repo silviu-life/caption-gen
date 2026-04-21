@@ -477,5 +477,13 @@
     "status": "success",
     "characters_used": 931,
     "cost_usd": 0.1843
+  },
+  {
+    "script_number": 61,
+    "filename": "061-the-shadow-of-the-helper",
+    "date_posted": "2026-04-21T06:54:59",
+    "status": "success",
+    "characters_used": 775,
+    "cost_usd": 0.1535
   }
 ]
