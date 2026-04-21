@@ -485,5 +485,13 @@
     "status": "success",
     "characters_used": 775,
     "cost_usd": 0.1535
+  },
+  {
+    "script_number": 62,
+    "filename": "062-the-love-you-cant-receive",
+    "date_posted": "2026-04-21T16:55:28",
+    "status": "success",
+    "characters_used": 879,
+    "cost_usd": 0.174
   }
 ]
