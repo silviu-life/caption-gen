@@ -493,5 +493,13 @@
     "status": "success",
     "characters_used": 879,
     "cost_usd": 0.174
+  },
+  {
+    "script_number": 63,
+    "filename": "063-re-parenting-yourself",
+    "date_posted": "2026-04-21T19:56:26",
+    "status": "success",
+    "characters_used": 1280,
+    "cost_usd": 0.2534
   }
 ]
