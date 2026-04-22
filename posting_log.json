@@ -509,5 +509,13 @@
     "status": "success",
     "characters_used": 783,
     "cost_usd": 0.155
+  },
+  {
+    "script_number": 65,
+    "filename": "065-the-treasure-in-the-cave",
+    "date_posted": "2026-04-22T14:54:52",
+    "status": "success",
+    "characters_used": 834,
+    "cost_usd": 0.1651
   }
 ]
