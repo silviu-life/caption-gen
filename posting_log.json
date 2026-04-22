@@ -501,5 +501,13 @@
     "status": "success",
     "characters_used": 1280,
     "cost_usd": 0.2534
+  },
+  {
+    "script_number": 64,
+    "filename": "064-the-moment-you-chose-the-mask",
+    "date_posted": "2026-04-22T06:54:39",
+    "status": "success",
+    "characters_used": 783,
+    "cost_usd": 0.155
   }
 ]
