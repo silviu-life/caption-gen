@@ -517,5 +517,13 @@
     "status": "success",
     "characters_used": 834,
     "cost_usd": 0.1651
+  },
+  {
+    "script_number": 66,
+    "filename": "066-when-the-pendulum-swings",
+    "date_posted": "2026-04-22T18:50:00",
+    "status": "success",
+    "characters_used": 811,
+    "cost_usd": 0.1606
   }
 ]
