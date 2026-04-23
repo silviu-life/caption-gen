@@ -533,5 +533,13 @@
     "status": "success",
     "characters_used": 794,
     "cost_usd": 0.1572
+  },
+  {
+    "script_number": 68,
+    "filename": "068-the-things-we-inherit",
+    "date_posted": "2026-04-23T16:55:11",
+    "status": "success",
+    "characters_used": 850,
+    "cost_usd": 0.1683
   }
 ]
