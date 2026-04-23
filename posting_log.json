@@ -541,5 +541,13 @@
     "status": "success",
     "characters_used": 850,
     "cost_usd": 0.1683
+  },
+  {
+    "script_number": 69,
+    "filename": "069-the-relationship-with-yourself",
+    "date_posted": "2026-04-23T18:54:49",
+    "status": "success",
+    "characters_used": 836,
+    "cost_usd": 0.1655
   }
 ]
