@@ -525,5 +525,13 @@
     "status": "success",
     "characters_used": 811,
     "cost_usd": 0.1606
+  },
+  {
+    "script_number": 67,
+    "filename": "067-surrender-is-not-defeat",
+    "date_posted": "2026-04-23T08:54:00",
+    "status": "success",
+    "characters_used": 794,
+    "cost_usd": 0.1572
   }
 ]
