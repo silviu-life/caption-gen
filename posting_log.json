@@ -557,5 +557,13 @@
     "status": "success",
     "characters_used": 693,
     "cost_usd": 0.1372
+  },
+  {
+    "script_number": 71,
+    "filename": "071-the-dark-night-of-the-soul",
+    "date_posted": "2026-04-24T12:56:28",
+    "status": "success",
+    "characters_used": 1197,
+    "cost_usd": 0.237
   }
 ]
