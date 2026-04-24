@@ -549,5 +549,13 @@
     "status": "success",
     "characters_used": 836,
     "cost_usd": 0.1655
+  },
+  {
+    "script_number": 70,
+    "filename": "070-the-shame-that-protects-nothing",
+    "date_posted": "2026-04-24T07:55:16",
+    "status": "success",
+    "characters_used": 693,
+    "cost_usd": 0.1372
   }
 ]
