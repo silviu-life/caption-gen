@@ -573,5 +573,13 @@
     "status": "success",
     "characters_used": 539,
     "cost_usd": 0.1067
+  },
+  {
+    "script_number": 73,
+    "filename": "073-the-addiction-to-becoming",
+    "date_posted": "2026-04-25T16:50:00",
+    "status": "success",
+    "characters_used": 836,
+    "cost_usd": 0.1655
   }
 ]
