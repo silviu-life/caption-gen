@@ -605,5 +605,13 @@
     "status": "success",
     "characters_used": 0,
     "cost_usd": 0
+  },
+  {
+    "script_number": 77,
+    "filename": "077-the-crack-where-light-enters",
+    "date_posted": "2026-04-26T14:50:00",
+    "status": "success",
+    "characters_used": 628,
+    "cost_usd": 0.1243
   }
 ]
