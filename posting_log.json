@@ -597,5 +597,13 @@
     "status": "success",
     "characters_used": 783,
     "cost_usd": 0.155
+  },
+  {
+    "script_number": 76,
+    "filename": "076-breaking-the-family-spell",
+    "date_posted": "2026-04-26T11:51:00",
+    "status": "success",
+    "characters_used": 0,
+    "cost_usd": 0
   }
 ]
