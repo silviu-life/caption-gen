@@ -613,5 +613,13 @@
     "status": "success",
     "characters_used": 628,
     "cost_usd": 0.1243
+  },
+  {
+    "script_number": 78,
+    "filename": "078-the-people-pleaser-paradox",
+    "date_posted": "2026-04-27T06:57:31",
+    "status": "success",
+    "characters_used": 860,
+    "cost_usd": 0.1703
   }
 ]
