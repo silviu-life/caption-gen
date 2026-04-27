@@ -621,5 +621,13 @@
     "status": "success",
     "characters_used": 860,
     "cost_usd": 0.1703
+  },
+  {
+    "script_number": 79,
+    "filename": "079-the-courage-to-be-disliked",
+    "date_posted": "2026-04-27T17:56:01",
+    "status": "success",
+    "characters_used": 836,
+    "cost_usd": 0.1655
   }
 ]
