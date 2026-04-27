@@ -629,5 +629,13 @@
     "status": "success",
     "characters_used": 836,
     "cost_usd": 0.1655
+  },
+  {
+    "script_number": 80,
+    "filename": "080-the-dream-that-wont-leave-you",
+    "date_posted": "2026-04-27T18:54:49",
+    "status": "success",
+    "characters_used": 789,
+    "cost_usd": 0.1562
   }
 ]
