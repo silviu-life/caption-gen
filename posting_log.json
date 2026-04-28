@@ -637,5 +637,13 @@
     "status": "success",
     "characters_used": 789,
     "cost_usd": 0.1562
+  },
+  {
+    "script_number": 81,
+    "filename": "081-the-shadow-in-your-silence",
+    "date_posted": "2026-04-28T06:55:08",
+    "status": "success",
+    "characters_used": 791,
+    "cost_usd": 0.1566
   }
 ]
