@@ -645,5 +645,13 @@
     "status": "success",
     "characters_used": 791,
     "cost_usd": 0.1566
+  },
+  {
+    "script_number": 82,
+    "filename": "082-loving-without-losing-yourself",
+    "date_posted": "2026-04-29T08:27:07",
+    "status": "success",
+    "characters_used": 0,
+    "cost_usd": 0
   }
 ]
