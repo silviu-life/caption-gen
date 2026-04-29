@@ -661,5 +661,13 @@
     "status": "success",
     "characters_used": 794,
     "cost_usd": 0.1572
+  },
+  {
+    "script_number": 84,
+    "filename": "084-the-mask-that-grew-into-your-face",
+    "date_posted": "2026-04-29T17:55:19",
+    "status": "success",
+    "characters_used": 792,
+    "cost_usd": 0.1568
   }
 ]
