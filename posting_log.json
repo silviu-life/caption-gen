@@ -653,5 +653,13 @@
     "status": "success",
     "characters_used": 0,
     "cost_usd": 0
+  },
+  {
+    "script_number": 83,
+    "filename": "083-the-parent-who-wasnt-there",
+    "date_posted": "2026-04-29T15:54:50",
+    "status": "success",
+    "characters_used": 794,
+    "cost_usd": 0.1572
   }
 ]
