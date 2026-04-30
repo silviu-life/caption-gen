@@ -677,5 +677,13 @@
     "status": "success",
     "characters_used": 1248,
     "cost_usd": 0.2471
+  },
+  {
+    "script_number": 86,
+    "filename": "086-the-self-you-were-before-the-wound",
+    "date_posted": "2026-04-30T16:55:24",
+    "status": "success",
+    "characters_used": 985,
+    "cost_usd": 0.195
   }
 ]
