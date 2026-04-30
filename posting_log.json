@@ -669,5 +669,13 @@
     "status": "success",
     "characters_used": 792,
     "cost_usd": 0.1568
+  },
+  {
+    "script_number": 85,
+    "filename": "085-the-shadow-is-not-the-enemy",
+    "date_posted": "2026-04-30T09:56:04",
+    "status": "success",
+    "characters_used": 1248,
+    "cost_usd": 0.2471
   }
 ]
