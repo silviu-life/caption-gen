@@ -685,5 +685,13 @@
     "status": "success",
     "characters_used": 985,
     "cost_usd": 0.195
+  },
+  {
+    "script_number": 87,
+    "filename": "087-the-art-of-holding-opposites",
+    "date_posted": "2026-04-30T18:55:48",
+    "status": "success",
+    "characters_used": 1196,
+    "cost_usd": 0.2368
   }
 ]
