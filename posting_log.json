@@ -709,5 +709,13 @@
     "status": "success",
     "characters_used": 920,
     "cost_usd": 0.1822
+  },
+  {
+    "script_number": 90,
+    "filename": "090-the-sacred-wound",
+    "date_posted": "2026-05-01T18:55:30",
+    "status": "success",
+    "characters_used": 863,
+    "cost_usd": 0.1709
   }
 ]
