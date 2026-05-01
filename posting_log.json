@@ -693,5 +693,13 @@
     "status": "success",
     "characters_used": 1196,
     "cost_usd": 0.2368
+  },
+  {
+    "script_number": 88,
+    "filename": "088-the-invisible-loyalty",
+    "date_posted": "2026-05-01T06:55:34",
+    "status": "success",
+    "characters_used": 831,
+    "cost_usd": 0.1645
   }
 ]
