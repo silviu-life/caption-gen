@@ -717,5 +717,13 @@
     "status": "success",
     "characters_used": 863,
     "cost_usd": 0.1709
+  },
+  {
+    "script_number": 91,
+    "filename": "091-the-quiet-power-of-presence",
+    "date_posted": "2026-05-02T11:54:03",
+    "status": "success",
+    "characters_used": 600,
+    "cost_usd": 0.1188
   }
 ]
