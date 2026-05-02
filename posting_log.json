@@ -725,5 +725,13 @@
     "status": "success",
     "characters_used": 600,
     "cost_usd": 0.1188
+  },
+  {
+    "script_number": 92,
+    "filename": "092-the-coincidence-that-changed-everything",
+    "date_posted": "2026-05-02T14:54:26",
+    "status": "success",
+    "characters_used": 838,
+    "cost_usd": 0.1659
   }
 ]
