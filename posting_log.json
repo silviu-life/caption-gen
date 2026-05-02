@@ -733,5 +733,13 @@
     "status": "success",
     "characters_used": 838,
     "cost_usd": 0.1659
+  },
+  {
+    "script_number": 93,
+    "filename": "093-the-one-who-stayed",
+    "date_posted": "2026-05-02T18:54:29",
+    "status": "success",
+    "characters_used": 780,
+    "cost_usd": 0.1544
   }
 ]
